@@ -169,7 +169,7 @@ def add_student(f: str, l: str) -> str:
     response = requests.post(url=CREATE_PAGE, json=data, headers=headers)
     id = response.json()['id']
 
-    open('student_IDs.txt', mode='a') as file:
+    with open('student_IDs.txt', mode='a') as file:
         file.write(f'{first} {last}={id}\n')
         file.flush()
     
