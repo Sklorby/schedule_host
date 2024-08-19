@@ -5,6 +5,7 @@ from discord import Intents, Message, app_commands, Interaction
 from discord.ext import commands
 from responses import get_response
 from data_manager import add_student, add_lesson
+import webserver
 
 # STEP 0: IMPORT OUR TOKEN FROM SOMEWHERE SAFE
 load_dotenv()
@@ -96,7 +97,12 @@ async def on_message(message: Message) -> None:
 
 # STEP 5: CREATE MAIN ENTRY POINT
 def main() -> None:
+    webserver.keep_alive()
     bot.run(TOKEN)
+
+# main()
+if __name__ == '__main__':
+    main()
 
 # main()
 if __name__ == '__main__':
