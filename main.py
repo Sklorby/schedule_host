@@ -93,7 +93,6 @@ async def on_message(message: Message) -> None:
 
     print(f'[{channel}] {username}: "{user_message}"')
     await bot.process_commands(message) # await commands if any
-    await send_message(message, user_message) 
 
 # STEP 5: CREATE MAIN ENTRY POINT
 def main() -> None:
